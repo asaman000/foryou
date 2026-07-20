@@ -1,0 +1,27 @@
+/*
+  Standalone HTML edition.
+  The original stylesheet is deliberately reused so both versions stay
+  pixel-for-pixel consistent whenever the main design is improved.
+*/
+@import url("../app/globals.css");
+
+[hidden] { display: none !important; }
+#storyExperience { width: 100%; }
+.panel[data-panel] { display: none; }
+.panel[data-panel].active-panel { display: block; animation: panel-in .75s cubic-bezier(.2,.8,.2,1); }
+.progress,
+.sound-panel { left: 50%; transform: translateX(-50%); }
+.progress { z-index: 12; }
+.sound-panel { width: max-content; z-index: 12; }
+.brand b, footer b { font: inherit; }
+.story h2 > span:first-child,
+.story h2 > span:last-child { color: inherit; font-size: inherit; }
+.story h2 > span:nth-child(2) { color: var(--pink); font-size: .72em; }
+.yes-click-burst:empty { display: none; }
+.celebration { position: relative; }
+
+@media (max-width: 700px) {
+  #storyExperience { width: 100%; }
+  .progress { max-width: calc(100vw - 28px); }
+  .sound-panel { bottom: 30px; }
+}
