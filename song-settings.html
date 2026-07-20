@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Live Song Control</title>
+  <link rel="stylesheet" href="html/editor.css?v=2">
+</head>
+<body>
+  <main class="editor-shell">
+    <header class="editor-head">
+      <div>
+        <div class="kicker">Live music room</div>
+        <h1>Song control</h1>
+        <p>Change the melody, volume and playback settings here. The open website tab updates in real time.</p>
+      </div>
+      <nav class="nav">
+        <a class="primary" href="./" target="_blank">Open website</a>
+        <a href="love-settings.html">Love settings</a>
+        <a href="hidden-editor.html">All text editor</a>
+      </nav>
+    </header>
+    <section class="editor-card">
+      <form id="songForm" class="form-grid">
+        <div class="field">
+          <label for="songPreset">Romantic melody</label>
+          <select id="songPreset">
+            <option value="moonlight">Moonlight Waltz</option>
+            <option value="heartbeat">Heartbeat Promise</option>
+            <option value="starlight">Starlight Dance</option>
+            <option value="lullaby">Forever Lullaby</option>
+          </select>
+          <small id="presetDescription"></small>
+        </div>
+        <div class="field">
+          <label for="customSongUrl">Custom song URL (optional)</label>
+          <input id="customSongUrl" type="url" placeholder="https://example.com/our-song.mp3">
+          <small>MP3, WAV or OGG direct link. Leave blank to use the selected melody.</small>
+        </div>
+        <div class="upload-box wide">
+          <div>
+            <strong>Upload your own song</strong>
+            <small>Choose an MP3, WAV, OGG, M4A or AAC file up to 25 MB. It stays private in this browser.</small>
+          </div>
+          <label class="upload-button" for="songUpload">Choose song</label>
+          <input id="songUpload" type="file" accept="audio/*,.mp3,.wav,.ogg,.m4a,.aac">
+          <div class="upload-info" id="uploadInfo">No song uploaded yet</div>
+          <button id="removeUpload" type="button" hidden>Remove uploaded song</button>
+        </div>
+        <div class="field wide">
+          <label for="musicVolume">Volume: <span id="volumeValue">35%</span></label>
+          <input id="musicVolume" type="range" min="0" max="100" value="35">
+        </div>
+        <div class="switch-row">
+          <input id="musicEnabled" type="checkbox">
+          <label for="musicEnabled">Enable music and autoplay when the page opens</label>
+        </div>
+        <div class="switch-row">
+          <input id="musicLoop" type="checkbox">
+          <label for="musicLoop">Repeat the song continuously</label>
+        </div>
+        <p class="preset-note">Tip: a browser may block sound until the visitor interacts once. The website automatically retries on the first tap or click.</p>
+      </form>
+      <div class="actions">
+        <button class="primary" id="applySong" type="button">Apply & play</button>
+        <button id="resetSong" type="button">Reset music</button>
+        <span class="status" id="songStatus">Changes save automatically</span>
+      </div>
+    </section>
+  </main>
+  <script src="html/content-store.js?v=2"></script>
+  <script src="html/audio-store.js?v=1"></script>
+  <script src="html/song-editor.js?v=2"></script>
+</body>
+</html>

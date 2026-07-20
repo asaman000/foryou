@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hidden Story Editor</title>
+  <link rel="stylesheet" href="html/editor.css?v=2">
+</head>
+<body data-editor-mode="all">
+  <main class="editor-shell">
+    <header class="editor-head">
+      <div>
+        <div class="kicker">Private control room</div>
+        <h1>Edit every word</h1>
+        <p>Keep the main page open in another tab. Every field saves automatically and updates the website in real time.</p>
+      </div>
+      <nav class="nav">
+        <a class="primary" href="./" target="_blank">Open website</a>
+        <a href="love-settings.html">Love settings</a>
+        <a href="song-settings.html">Song control</a>
+      </nav>
+    </header>
+    <section class="editor-card">
+      <form id="editorForm" class="form-grid"></form>
+      <div class="actions">
+        <button id="resetButton" type="button">Reset defaults</button>
+        <span class="status" id="saveStatus">Changes save automatically</span>
+      </div>
+    </section>
+  </main>
+  <script src="html/content-store.js?v=2"></script>
+  <script src="html/editor.js?v=2"></script>
+</body>
+</html>
